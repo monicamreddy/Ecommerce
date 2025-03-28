@@ -32,7 +32,7 @@ These are the libraries required to run the application.
 
 Steps to run:
 1) npx react-native start
-2) npx raect-native run-android
+2) npx react-native run-android
 
 Note:
 The Fake Store API is a demo/mock API that simulates responses but doesn't actually persist changes to its database. When you:
