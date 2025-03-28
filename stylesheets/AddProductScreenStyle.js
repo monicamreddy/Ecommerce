@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
     container: {
@@ -6,12 +8,12 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     formContainer: {
-      padding: 16,
+      padding: width * 0.04, 
     },
     label: {
-      fontSize: 16,
+      fontSize: width * 0.04, 
       fontWeight: '600',
-      marginBottom: 8,
+      marginBottom: height * 0.01, 
       color: '#333',
     },
     input: {
@@ -19,26 +21,27 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderColor: '#ddd',
       borderRadius: 8,
-      padding: 12,
-      marginBottom: 16,
-      fontSize: 16,
+      padding: width * 0.04, 
+      marginBottom: height * 0.02, 
+      fontSize: width * 0.04, 
     },
     textArea: {
-      height: 100,
+      height: height * 0.15, 
       textAlignVertical: 'top',
     },
     button: {
       backgroundColor: '#0066cc',
       borderRadius: 8,
-      padding: 16,
+      paddingVertical: height * 0.02, 
+      paddingHorizontal: width * 0.1, 
       alignItems: 'center',
-      marginTop: 16,
+      marginTop: height * 0.02, 
     },
     buttonText: {
       color: '#fff',
-      fontSize: 16,
+      fontSize: width * 0.045, 
       fontWeight: '600',
     },
-  });
-  
+});
+
 export default styles;

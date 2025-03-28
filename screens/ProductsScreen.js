@@ -3,14 +3,13 @@ import {
   View, 
   Text, 
   FlatList, 
-  StyleSheet, 
   TouchableOpacity, 
   Image, 
   ActivityIndicator,
   Alert
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons'; 
-import styles from '../stylesheets/ProductsScreenStyle'
+import styles from '../stylesheets/ProductsScreenStyle';
 
 const ProductsScreen = ({ navigation }) => {
   const [products, setProducts] = useState([]);
@@ -34,20 +33,25 @@ const ProductsScreen = ({ navigation }) => {
   // Delete a product
   const deleteProduct = async (id) => {
     try {
+      setLoading(true);
       const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
         method: 'DELETE',
       });
       
-      if (response.ok) {
+      const data = await response.json();
+      
+      if (data) {
         // Remove product from state
         setProducts(products.filter(product => product.id !== id));
         Alert.alert('Success', 'Product deleted successfully');
       } else {
         Alert.alert('Error', 'Failed to delete product');
       }
+      setLoading(false);
     } catch (error) {
       console.error('Error deleting product:', error);
       Alert.alert('Error', 'Failed to delete product');
+      setLoading(false);
     }
   };
 
@@ -95,13 +99,13 @@ const ProductsScreen = ({ navigation }) => {
           style={[styles.actionButton, styles.editButton]}
           onPress={() => navigation.navigate('EditProduct', { product: item })}
         >
-          <Ionicons name="pencil" size={16} color="#fff" />
+          <Text style={styles.buttonText}>Edit</Text>
         </TouchableOpacity>
         <TouchableOpacity 
           style={[styles.actionButton, styles.deleteButton]}
           onPress={() => confirmDelete(item.id)}
         >
-          <Ionicons name="trash" size={16} color="#fff" />
+          <Text style={styles.buttonText}>Delete</Text>
         </TouchableOpacity>
       </View>
     </TouchableOpacity>
@@ -123,7 +127,7 @@ const ProductsScreen = ({ navigation }) => {
             style={styles.addButton}
             onPress={() => navigation.navigate('AddProduct')}
           >
-            <Ionicons name="add" size={24} color="#fff" />
+            <Text style={[styles.buttonText,{fontSize: 30,}]}>+</Text>
           </TouchableOpacity>
         </>
       )}

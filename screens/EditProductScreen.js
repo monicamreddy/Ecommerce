@@ -3,13 +3,12 @@ import {
   View, 
   Text, 
   TextInput, 
-  StyleSheet, 
   TouchableOpacity, 
   ScrollView,
   Alert,
   ActivityIndicator
 } from 'react-native';
-import styles from '../stylesheets/EditProductScreenStyle'
+import styles from '../stylesheets/EditProductScreenStyle';
 
 const EditProductScreen = ({ route, navigation }) => {
   const { product } = route.params;
@@ -46,23 +45,36 @@ const EditProductScreen = ({ route, navigation }) => {
 
     try {
       setLoading(true);
+      
+      // Create the updated product object according to the API requirements
+      const updatedProduct = {
+        title,
+        price: parseFloat(price),
+        description,
+        category,
+        image
+      };
+      
+      console.log('Updating product ID:', product.id);
+      console.log('Sending updated data:', JSON.stringify(updatedProduct));
+      
       const response = await fetch(`https://fakestoreapi.com/products/${product.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          title,
-          price: parseFloat(price),
-          description,
-          category,
-          image,
-        }),
+        body: JSON.stringify(updatedProduct),
       });
 
+      console.log('Response status:', response.status);
+      
+      // The Fake Store API always returns a 200 status for successful operations
       const data = await response.json();
+      console.log('Response data:', JSON.stringify(data));
+      
       setLoading(false);
 
+      // The API returns the updated product
       if (data) {
         Alert.alert(
           'Success',
@@ -70,11 +82,11 @@ const EditProductScreen = ({ route, navigation }) => {
           [{ text: 'OK', onPress: () => navigation.goBack() }]
         );
       } else {
-        Alert.alert('Error', 'Failed to update product');
+        Alert.alert('Error', 'Failed to update product: No data returned');
       }
     } catch (error) {
       console.error('Error updating product:', error);
-      Alert.alert('Error', 'Failed to update product');
+      Alert.alert('Error', `Failed to update product: ${error.message}`);
       setLoading(false);
     }
   };

@@ -3,7 +3,6 @@ import {
   View, 
   Text, 
   TextInput, 
-  StyleSheet, 
   TouchableOpacity, 
   ScrollView,
   Alert,
@@ -44,35 +43,47 @@ const AddProductScreen = ({ navigation }) => {
 
     try {
       setLoading(true);
+      
+      // Create the product object according to the API requirements
+      const productData = {
+        title,
+        price: parseFloat(price),
+        description,
+        category,
+        image
+      };
+      
+      console.log('Sending product data:', JSON.stringify(productData));
+      
       const response = await fetch('https://fakestoreapi.com/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          title,
-          price: parseFloat(price),
-          description,
-          category,
-          image,
-        }),
+        body: JSON.stringify(productData),
       });
 
+      console.log('Response status:', response.status);
+      
+      // The Fake Store API always returns a 200 status for successful operations
       const data = await response.json();
+      console.log('Response data:', JSON.stringify(data));
+      
       setLoading(false);
 
-      if (data) {
+      // The API returns the created product with an ID
+      if (data && data.id) {
         Alert.alert(
           'Success',
-          'Product added successfully',
+          `Product added successfully with ID: ${data.id}`,
           [{ text: 'OK', onPress: () => navigation.goBack() }]
         );
       } else {
-        Alert.alert('Error', 'Failed to add product');
+        Alert.alert('Error', 'Failed to add product: No ID returned');
       }
     } catch (error) {
       console.error('Error adding product:', error);
-      Alert.alert('Error', 'Failed to add product');
+      Alert.alert('Error', `Failed to add product: ${error.message}`);
       setLoading(false);
     }
   };

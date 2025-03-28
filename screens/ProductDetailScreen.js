@@ -3,7 +3,6 @@ import {
   View, 
   Text, 
   Image, 
-  StyleSheet, 
   ScrollView, 
   ActivityIndicator,
   Alert
@@ -20,12 +19,17 @@ const ProductDetailScreen = ({ route }) => {
       try {
         setLoading(true);
         const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const data = await response.json();
         setProduct(data);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching product details:', error);
-        Alert.alert('Error', 'Failed to load product details');
+        Alert.alert('Error', `Failed to load product details: ${error.message}`);
         setLoading(false);
       }
     };

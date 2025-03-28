@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
     container: {
@@ -11,14 +13,14 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     productList: {
-      padding: 16,
+      padding: width * 0.04, 
     },
     productItem: {
       flexDirection: 'row',
       backgroundColor: '#fff',
       borderRadius: 10,
-      padding: 12,
-      marginBottom: 16,
+      padding: width * 0.03, 
+      marginBottom: height * 0.02, 
       elevation: 2,
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 1 },
@@ -26,29 +28,29 @@ const styles = StyleSheet.create({
       shadowRadius: 2.22,
     },
     productImage: {
-      width: 80,
-      height: 80,
+      width: width * 0.2, 
+      height: width * 0.2, 
       borderRadius: 8,
       backgroundColor: '#f9f9f9',
     },
     productInfo: {
       flex: 1,
-      marginLeft: 12,
+      marginLeft: width * 0.03, 
       justifyContent: 'center',
     },
     productTitle: {
-      fontSize: 16,
+      fontSize: width * 0.04, 
       fontWeight: '600',
-      marginBottom: 4,
+      marginBottom: height * 0.005, 
     },
     productPrice: {
-      fontSize: 15,
+      fontSize: width * 0.038, 
       fontWeight: '700',
       color: '#0066cc',
-      marginBottom: 4,
+      marginBottom: height * 0.005, 
     },
     productCategory: {
-      fontSize: 12,
+      fontSize: width * 0.03, 
       color: '#666',
       textTransform: 'capitalize',
     },
@@ -57,12 +59,12 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     actionButton: {
-      width: 30,
-      height: 30,
-      borderRadius: 15,
+      width: width * 0.2, 
+      paddingVertical: height * 0.01, 
+      borderRadius: 8,
       justifyContent: 'center',
       alignItems: 'center',
-      marginBottom: 8,
+      marginBottom: height * 0.01, 
     },
     editButton: {
       backgroundColor: '#4caf50',
@@ -70,13 +72,19 @@ const styles = StyleSheet.create({
     deleteButton: {
       backgroundColor: '#f44336',
     },
+    buttonText: {
+      color: '#fff',
+      fontSize: width * 0.035, 
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
     addButton: {
       position: 'absolute',
-      bottom: 24,
-      right: 24,
-      width: 56,
-      height: 56,
-      borderRadius: 28,
+      bottom: height * 0.03, 
+      right: width * 0.05, 
+      width: width * 0.15, 
+      height: width * 0.15, 
+      borderRadius: (width * 0.15) / 2, 
       backgroundColor: '#0066cc',
       justifyContent: 'center',
       alignItems: 'center',
@@ -86,6 +94,6 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
     },
-  });
+});
 
 export default styles;
