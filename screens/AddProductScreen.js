@@ -75,7 +75,7 @@ const AddProductScreen = ({ navigation }) => {
       if (data && data.id) {
         Alert.alert(
           'Success',
-          `Product added successfully with ID: ${data.id}`,
+          `Product added successfully with ID: ${data.id}. Note: This change will not be saved permanently.`,
           [{ text: 'OK', onPress: () => navigation.goBack() }]
         );
       } else {

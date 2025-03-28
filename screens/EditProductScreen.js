@@ -78,7 +78,7 @@ const EditProductScreen = ({ route, navigation }) => {
       if (data) {
         Alert.alert(
           'Success',
-          'Product updated successfully',
+          'Product updated successfully. Note: This change will not be saved permanently.',
           [{ text: 'OK', onPress: () => navigation.goBack() }]
         );
       } else {

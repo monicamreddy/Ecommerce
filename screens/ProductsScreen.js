@@ -43,7 +43,7 @@ const ProductsScreen = ({ navigation }) => {
       if (data) {
         // Remove product from state
         setProducts(products.filter(product => product.id !== id));
-        Alert.alert('Success', 'Product deleted successfully');
+        Alert.alert('Success', 'Product deleted successfully. Note: This change will not be saved permanently.');
       } else {
         Alert.alert('Error', 'Failed to delete product');
       }
