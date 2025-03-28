@@ -47,67 +47,67 @@ Screenshots:
 Here are some screenshots of the app with descriptions:
 
 <div align="center">
-    <img src="assets/screenshots/AllProduct.png" alt="All Product List" width="80%" />
+    <img src="assets/screenshots/AllProduct.png" alt="All Product List" width="60%" />
     <p><strong>All product list where users can view, edit, delete, and add their product details.
     </strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/ViewProduct1.png" alt="View Product 1" width="80%" />
+    <img src="assets/screenshots/ViewProduct1.png" alt="View Product 1" width="60%" />
     <p><strong>Detailed information of the product.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/ViewProduct2.png" alt="View Product 2" width="80%" />
+    <img src="assets/screenshots/ViewProduct2.png" alt="View Product 2" width="60%" />
     <p><strong>Detailed information of the product.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/DeleteProduct.png" alt="Delete Product" width="80%" />
+    <img src="assets/screenshots/DeleteProduct.png" alt="Delete Product" width="60%" />
     <p><strong>Deleting the product.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/DeleteProductSuccess.png" alt="Delete Product Success" width="80%" />
+    <img src="assets/screenshots/DeleteProductSuccess.png" alt="Delete Product Success" width="60%" />
     <p><strong>Deleting the product is successful.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/AfterDelete.png" alt="After Delete" width="80%" />
+    <img src="assets/screenshots/AfterDelete.png" alt="After Delete" width="60%" />
     <p><strong>After Deleting the product, the product list.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/EditProduct.png" alt="Edit Product" width="80%" />
+    <img src="assets/screenshots/EditProduct.png" alt="Edit Product" width="60%" />
     <p><strong>Updating the product.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/EditProductSuccess.png" alt="Edit Product Success" width="80%" />
+    <img src="assets/screenshots/EditProductSuccess.png" alt="Edit Product Success" width="60%" />
     <p><strong>Updating the product is successful.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/ConsoleEdit.png" alt="Console for Edit" width="80%" />
+    <img src="assets/screenshots/ConsoleEdit.png" alt="Console for Edit" width="60%" />
     <p><strong>Console for edit product.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/AddNewProduct.png" alt="Adding new Product" width="80%" />
+    <img src="assets/screenshots/AddNewProduct.png" alt="Adding new Product" width="60%" />
     <p><strong>Adding new product.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/NewProductDetails.png" alt="Entering new Product details" width="80%" />
+    <img src="assets/screenshots/NewProductDetails.png" alt="Entering new Product details" width="60%" />
     <p><strong>Entering the details for adding new product.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/AddProductSuccess.png" alt="Added new product successfully" width="80%" />
+    <img src="assets/screenshots/AddProductSuccess.png" alt="Added new product successfully" width="60%" />
     <p><strong>Adding new product successfull.</strong></p>
 </div>
 
 <div align="center">
-    <img src="assets/screenshots/ConsoleAdd.png" alt="Console for product added" width="80%" />
+    <img src="assets/screenshots/ConsoleAdd.png" alt="Console for product added" width="60%" />
     <p><strong>Console for adding new product.</strong></p>
 </div>
